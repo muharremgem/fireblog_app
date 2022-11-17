@@ -136,9 +136,13 @@ export default function SignInSide() {
                   alt="google"
                 />
               </Button>
-
-              <Copyright sx={{ mt: 5 }} />
             </Box>
+            <div className="flex justify-center items-center w-[20rem]  mt-14">
+              <img
+                src="https://pro2-bar-s3-cdn-cf.myportfolio.com/9bdefa6fb51a3e100907c6ce7b8d8b05/12f90cf5-d59b-4fa0-986e-8270e95c6a6a_rw_600.gif?h=4480998c4d68c54ee0ed10b802ae096a"
+                alt=""
+              />
+            </div>
           </Box>
         </Grid>
       </Grid>
