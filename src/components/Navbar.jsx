@@ -15,9 +15,27 @@ import AdbIcon from "@mui/icons-material/Adb";
 import mg from "../assets.js/mg.jpg";
 
 const pages = [
-  <a href="https://www.muharremgem.com/">website</a>,
-  <a href="https://www.muharremgem.com/">linkedin</a>,
-  <a href="https://www.muharremgem.com/">github</a>,
+  <a
+    href="https://www.muharremgem.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    website
+  </a>,
+  <a
+    href="https://www.linkedin.com/in/muharremgem/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    linkedin
+  </a>,
+  <a
+    href="https://github.com/muharremgem"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    github
+  </a>,
 ];
 const settings = ["Profile", "Dashboard", "Logout"];
 
