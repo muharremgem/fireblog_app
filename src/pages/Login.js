@@ -117,18 +117,26 @@ export default function SignInSide() {
               >
                 Sign In
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
+              <Button
+                className="gap-5"
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                <img
+                  className="w-[1.8rem]"
+                  src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+                  alt="google"
+                />
+                Google
+                <img
+                  className="w-[2rem]"
+                  src="https://iconarchive.com/download/i67980/marcus-roberto/google-play/Google-Chrome.ico"
+                  alt="google"
+                />
+              </Button>
+
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
