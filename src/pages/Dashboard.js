@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Layout from "../components/Layout";
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <Layout>
+      <div>muharrem</div>
+    </Layout>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
