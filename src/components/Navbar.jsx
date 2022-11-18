@@ -60,16 +60,16 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="2xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              mr: 8,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
