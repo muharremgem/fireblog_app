@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const NewBlog = () => {
   return (
-    <div>NewBlog</div>
-  )
-}
+    <div>
+      <div>NewBlog</div>
+    </div>
+  );
+};
 
-export default NewBlog
+export default NewBlog;
