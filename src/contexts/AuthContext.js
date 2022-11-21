@@ -1,11 +1,13 @@
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../helpers/firebase";
 import { createContext, useState } from "react";
+import { useEffect } from "react";
 
 export const AuthContext = createContext();
 
@@ -16,9 +18,17 @@ export const AuthProvider = ({ children }) => {
   const [password, setPassword] = useState("");
 
   // userInfo
-  const [userInfo, setUserInfo] = useState(null);
-
+  const [user, setUser] = useState({});
   // Custom Func
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log(currentUser);
+    });
+    return () => {
+      unsub();
+    };
+  }, []);
 
   const register = () => {
     try {
@@ -34,8 +44,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => {
     try {
-      signInWithEmailAndPassword(auth, email, password).then((res) =>
-        setUserInfo(res.user)
+      signInWithEmailAndPassword(auth, email, password).then(() =>
+        window.location.replace("/")
       );
     } catch (err) {
       console.log(err);
@@ -45,7 +55,6 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     try {
       signOut(auth);
-      setUserInfo();
     } catch (err) {
       console.log(err);
     }
@@ -58,7 +67,7 @@ export const AuthProvider = ({ children }) => {
         setEmail,
         setUserName,
         login,
-        userInfo,
+        user,
         logout,
         email,
         password,

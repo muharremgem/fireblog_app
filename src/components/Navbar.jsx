@@ -13,6 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import mg from "../assets.js/mg.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 const pages = [
   <a
@@ -37,7 +39,6 @@ const pages = [
     github
   </a>,
 ];
-const settings = ["Profile", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -56,6 +57,14 @@ function ResponsiveAppBar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const { logout, user } = useContext(AuthContext);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+    window.location.replace("/login");
   };
 
   return (
@@ -110,8 +119,8 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map((page, idx) => (
+                <MenuItem key={idx} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -137,9 +146,9 @@ function ResponsiveAppBar() {
             Blog App
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, idx2) => (
               <Button
-                key={page}
+                key={idx2}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -152,6 +161,7 @@ function ResponsiveAppBar() {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src={mg} />
+                <p className="ml-7  capitalize">{user && user.displayName}</p>
               </IconButton>
             </Tooltip>
             <Menu
@@ -170,11 +180,12 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <div className="w-[5rem] p-1 text-left flex flex-col gap-1">
+                <Typography className="cursor-pointer">New Post</Typography>
+                <Typography className="cursor-pointer" onClick={handleLogout}>
+                  Logout
+                </Typography>
+              </div>
             </Menu>
           </Box>
         </Toolbar>

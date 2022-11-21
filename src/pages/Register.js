@@ -18,7 +18,8 @@ import { AuthContext } from "../contexts/AuthContext";
 const theme = createTheme();
 
 export default function SignUp() {
-  const { setEmail, setPassword, register } = useContext(AuthContext);
+  const { setEmail, setPassword, register, setUserName } =
+    useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,6 +60,7 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  onChange={(e) => setUserName(e.target.value)}
                 />
               </Grid>
 
