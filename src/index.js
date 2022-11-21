@@ -8,8 +8,8 @@ import { BlogProvider } from "./contexts/BlogContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
-    <BlogProvider>
-      <App />
-    </BlogProvider>
+    {/* <BlogProvider> */}
+    <App />
+    {/* </BlogProvider> */}
   </AuthProvider>
 );
