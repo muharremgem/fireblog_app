@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import { async } from "@firebase/util";
 
 function Copyright(props) {
   return (
@@ -37,13 +38,16 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
-  const { setEmail, setPassword, login } = useContext(AuthContext);
+  const { setEmail, setPassword, login, googleLogin } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     login();
   };
-
+  const googleSubmit = async () => {
+    await googleLogin();
+    window.location.replace("/");
+  };
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -126,6 +130,7 @@ export default function SignInSide() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                onClick={googleSubmit}
               >
                 <img
                   className="w-[1.8rem]"
