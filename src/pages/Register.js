@@ -18,8 +18,7 @@ import { AuthContext } from "../contexts/AuthContext";
 const theme = createTheme();
 
 export default function SignUp() {
-  const { email, setEmail, password, setPassword, register } =
-    useContext(AuthContext);
+  const { setEmail, setPassword, register } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
