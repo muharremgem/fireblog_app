@@ -29,7 +29,7 @@ export default function RecipeReviewCard() {
         component="img"
         height="194"
         image="https://hips.hearstapps.com/hmg-prod/images/2023-bmw-z4-108-1663892711.jpg?crop=0.641xw:0.721xh;0.280xw,0.180xh&resize=640:*"
-        alt="Paella dish"
+        alt="bmw"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
