@@ -17,7 +17,7 @@ const Details = () => {
   return (
     <Layout>
       <div className="">
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: "90vw" }} className="mx-auto ">
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe"></Avatar>
