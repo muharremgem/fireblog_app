@@ -15,6 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import mg from "../assets.js/mg.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const pages = [
   <a
@@ -66,6 +67,8 @@ function ResponsiveAppBar() {
     logout();
     window.location.replace("/login");
   };
+
+  const navigate = useNavigate();
 
   return (
     <AppBar position="sticky">
@@ -181,7 +184,12 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               <div className="w-[5rem] p-1 text-left flex flex-col gap-1">
-                <Typography className="cursor-pointer">New Post</Typography>
+                <Typography
+                  className="cursor-pointer"
+                  onClick={() => navigate("/new")}
+                >
+                  New Post
+                </Typography>
                 <Typography className="cursor-pointer" onClick={handleLogout}>
                   Logout
                 </Typography>
