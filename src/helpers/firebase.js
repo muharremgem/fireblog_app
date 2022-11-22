@@ -9,6 +9,8 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_ID,
   appId: process.env.REACT_APP_API_ID,
+  databaseURL: process.env.REACT_APP_DATABASE,
+
 };
 
 // Initialize Firebase
