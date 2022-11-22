@@ -11,9 +11,6 @@ const Dashboard = () => {
         </div>
         <div className="flex flex-wrap gap-10 justify-center items-center  mt-5">
           <BlogCard className="flex  mt-5" />
-          <BlogCard className="flex mt-5" />
-          <BlogCard className="flex mt-5" />
-          <BlogCard className="flex mt-5" />
         </div>
       </div>
     </Layout>
