@@ -7,17 +7,25 @@ import { BlogContext } from "../contexts/BlogContext";
 import { useContext } from "react";
 
 export default function BasicTextFields() {
-  const { setTitle, setImage, setTextArea } = useContext(BlogContext);
+  const { setTitle, setImage, setTextArea, handleSubmit } =
+    useContext(BlogContext);
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+
+    handleSubmit();
+    console.log("çalıstı ulan");
+  };
 
   return (
     <Layout>
       <Box
-        //onSubmit={handleSubmitForm}
         component="form"
         sx={{
           "& > :not(style)": { m: 1, width: "35ch" },
         }}
         noValidate
+        onSubmit={handleSubmitForm}
         autoComplete="off"
         className="flex flex-col justify-center items-center mt-6 "
       >
