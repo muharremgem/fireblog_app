@@ -11,31 +11,27 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useNavigate } from "react-router-dom";
 
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({ data }) {
+  const navigate = useNavigate();
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{ maxWidth: 345 }}
+      onClick={() => navigate(`/posts/${data.userId}`, { state: data })}
+    >
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe"></Avatar>
         }
         action={<IconButton aria-label="settings"></IconButton>}
-        title="Muharrem Gem"
-        subheader="September 14, 2016"
+        title={data.username}
+        subheader={data.logDate}
       />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://hips.hearstapps.com/hmg-prod/images/2023-bmw-z4-108-1663892711.jpg?crop=0.641xw:0.721xh;0.280xw,0.180xh&resize=640:*"
-        alt="bmw"
-      />
+      <CardMedia component="img" height="194" image={data.image} alt="bmw" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {data.textArea}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

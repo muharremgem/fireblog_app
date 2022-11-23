@@ -5,8 +5,10 @@ import Layout from "../components/Layout";
 import { Button } from "@mui/material";
 import { BlogContext } from "../contexts/BlogContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BasicTextFields() {
+  const navigate = useNavigate();
   const { setTitle, setImage, setTextArea, handleSubmit } =
     useContext(BlogContext);
 
@@ -14,7 +16,7 @@ export default function BasicTextFields() {
     e.preventDefault();
 
     handleSubmit();
-    console.log("çalıstı ulan");
+    navigate("/");
   };
 
   return (
@@ -52,7 +54,6 @@ export default function BasicTextFields() {
           label="Content*"
           multiline
           rows={15}
-          defaultValue=""
           onChange={(e) => setTextArea(e.target.value)}
         />
         <Button

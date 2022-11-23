@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { async } from "@firebase/util";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -38,6 +39,8 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  const navigate = useNavigate();
+
   const { setEmail, setPassword, login, googleLogin } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
@@ -144,6 +147,23 @@ export default function SignInSide() {
                   alt="google"
                 />
               </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link
+                    onClick={() => navigate("/register")}
+                    to="/register"
+                    href="#"
+                    variant="body2"
+                  >
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
             </Box>
             <div className="flex justify-center items-center w-[20rem]  mt-14">
               <img
