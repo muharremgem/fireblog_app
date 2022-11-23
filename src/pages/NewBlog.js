@@ -14,7 +14,6 @@ export default function BasicTextFields() {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-
     handleSubmit();
     navigate("/");
   };
