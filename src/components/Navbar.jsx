@@ -51,7 +51,6 @@ function ResponsiveAppBar() {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -67,7 +66,6 @@ function ResponsiveAppBar() {
     logout();
     window.location.replace("/login");
   };
-
   const navigate = useNavigate();
 
   return (
