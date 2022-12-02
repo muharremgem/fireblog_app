@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function RecipeReviewCard({ data }) {
   const navigate = useNavigate();
+
   return (
     <Card
       sx={{ maxWidth: 345 }}
