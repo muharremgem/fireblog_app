@@ -109,7 +109,7 @@ export default function SignUp() {
             <div className="flex justify-center items-center mt-5">
               <img
                 src="https://images.squarespace-cdn.com/content/v1/55e06d0ee4b0718764fcc921/1507805805238-M8XG4RMCMWITZ7LJGEEF/slidebank+login.gif"
-                alt=""
+                alt="img1"
               />
             </div>
           </Box>
