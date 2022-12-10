@@ -1,5 +1,54 @@
 # Getting Started with Create React App
 
+
+
+  Project Name       |Libraries and Technologies I use     |How does my project look   
+:-------------------------|-------------------------|-------------------------
+[Fire_Blog_App](https://fireblog-app-muharremgem.vercel.app/)|  React firebase | ![blogapp](blogApp.gif)
+
+
+
+I used;
+ 
+useLocation
+
+useNavigate
+
+useSelector
+
+useContext
+
+Components
+
+useState
+
+useEffect
+
+useNavigate
+
+axios
+
+firebaseConfig
+
+import/export
+
+Props
+
+React Router Dom
+
+React Developer Tool
+
+React Icons
+
+Destructuring props
+
+array map method
+
+array some method
+
+TailwindCss
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
